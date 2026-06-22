@@ -33,8 +33,7 @@ body {
 
 .ball {
 
-    /* 이전보다 크게 */
-    width: clamp(130px, 18vw, 200px);
+    width: clamp(140px, 20vw, 220px);
     aspect-ratio: 1 / 1;
 
     position: relative;
@@ -43,12 +42,7 @@ body {
 
     overflow: hidden;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-
-    /* 살짝 흐린 유리 */
     background:
         radial-gradient(
             circle at 30% 25%,
@@ -59,8 +53,7 @@ body {
         );
 
 
-    border:
-        2px solid rgba(255,255,255,0.9);
+    border: 2px solid rgba(255,255,255,0.9);
 
 
     box-shadow:
@@ -88,14 +81,31 @@ body {
 
     border-radius: 50%;
 
-    background:
-        rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.9);
 
     filter: blur(10px);
 
     transform: rotate(-20deg);
 
     z-index: 5;
+}
+
+
+/* =====================
+   움직이는 중심점
+===================== */
+
+#mover {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+
+    z-index: 3;
 }
 
 
@@ -107,27 +117,23 @@ body {
 
     position: absolute;
 
-    /* 수정구 크기에 비례 */
-    width: 38%;
-    aspect-ratio: 1 / 1;
+    width: 70px;
+    height: 70px;
 
 
-    /* 기준점을 정확히 중앙으로 */
-    left: 50%;
-    top: 50%;
-
-
-    z-index: 3;
+    /* 핵심!!
+       눈의 정중앙이 mover와 겹치도록 */
+    left: -35px;
+    top: -35px;
 
 
     filter:
         drop-shadow(0 0 5px white)
         drop-shadow(0 0 10px #7fd8ff);
-
 }
 
 
-/* 눈 결정 디자인 */
+/* 눈 결정 선 */
 
 .snow line,
 .snow polygon,
@@ -141,10 +147,12 @@ body {
     stroke-linejoin: round;
 
     fill: none;
-
 }
 
 
+/* 눈 결정 끝 점 */
+
 .snow circle {
+
     fill: #9de8ff;
 }
