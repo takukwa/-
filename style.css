@@ -19,32 +19,7 @@ body {
 
     overflow: hidden;
 
-    background: #e6e6e6;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* =====================
-   배경
-===================== */
-
-.background {
-    width: 70vw;
-    max-width: 1100px;
-
-    aspect-ratio: 1.414 / 1;
-
-    max-height: 70vh;
-
     background: white;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 35px 70px rgba(0, 0, 0, 0.20);
 
     display: flex;
     justify-content: center;
@@ -58,8 +33,8 @@ body {
 
 .ball {
 
-    /* 배경 크기에 따라 변경 */
-    width: clamp(85px, 10vw, 120px);
+    /* 이전보다 크게 */
+    width: clamp(130px, 18vw, 200px);
     aspect-ratio: 1 / 1;
 
     position: relative;
@@ -68,14 +43,19 @@ body {
 
     overflow: hidden;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+
+    /* 살짝 흐린 유리 */
     background:
         radial-gradient(
             circle at 30% 25%,
-            rgba(255,255,255,0.40),
-            rgba(220,240,255,0.22) 35%,
-            rgba(180,220,255,0.12) 70%,
-            rgba(120,170,255,0.06)
+            rgba(255,255,255,0.45),
+            rgba(220,240,255,0.25) 35%,
+            rgba(180,220,255,0.15) 70%,
+            rgba(120,170,255,0.08) 100%
         );
 
 
@@ -84,14 +64,14 @@ body {
 
 
     box-shadow:
-        inset 12px 12px 22px rgba(255,255,255,0.6),
-        inset -12px -12px 22px rgba(100,150,255,0.15),
-        0 15px 25px rgba(0,0,0,0.15);
+        inset 18px 18px 30px rgba(255,255,255,0.7),
+        inset -18px -18px 30px rgba(100,150,255,0.18),
+        0 20px 40px rgba(0,0,0,0.15);
 }
 
 
 /* =====================
-   유리 반사
+   유리 하이라이트
 ===================== */
 
 .ball::before {
@@ -109,12 +89,11 @@ body {
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.85);
+        rgba(255,255,255,0.9);
 
-    filter: blur(8px);
+    filter: blur(10px);
 
-    transform:
-        rotate(-20deg);
+    transform: rotate(-20deg);
 
     z-index: 5;
 }
@@ -128,22 +107,23 @@ body {
 
     position: absolute;
 
-    width: 42%;
+    /* 수정구 크기에 비례 */
+    width: 38%;
     aspect-ratio: 1 / 1;
 
-    /* JS가 움직일 수 있게 */
-    left: 50%;
-   top: 50%;
 
-   margin-left: -21%;
-   margin-top: -21%;
+    /* 기준점을 정확히 중앙으로 */
+    left: 50%;
+    top: 50%;
+
 
     z-index: 3;
 
 
     filter:
-        drop-shadow(0 0 4px white)
-        drop-shadow(0 0 8px #7fd8ff);
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 10px #7fd8ff);
+
 }
 
 
@@ -161,11 +141,10 @@ body {
     stroke-linejoin: round;
 
     fill: none;
+
 }
 
 
 .snow circle {
-
     fill: #9de8ff;
-
 }
