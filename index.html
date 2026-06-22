@@ -2,265 +2,99 @@
 <html lang="ko">
 
 <head>
-<meta charset="UTF-8">
-<title>Snow Archive</title>
-
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-/* =====================
-   창
-===================== */
-
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-
-    background: #e6e6e6;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-}
-
-
-/* =====================
-   배경
-===================== */
-
-.background {
-    width: min(1100px, 75vw);
-    aspect-ratio: 1.414 / 1;
-
-    background: white;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 30px 60px rgba(0,0,0,0.18);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* =====================
-   수정구
-===================== */
-
-.ball {
-    width: 160px;
-    height: 160px;
-
-    position: relative;
-
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            rgba(255,255,255,0.38),
-            rgba(220,240,255,0.20) 35%,
-            rgba(180,220,255,0.10) 70%,
-            rgba(120,170,255,0.05) 100%
-        );
-
-    border: 2px solid rgba(255,255,255,0.9);
-
-    backdrop-filter: blur(5px);
-
-    box-shadow:
-        inset 25px 25px 40px rgba(255,255,255,0.6),
-        inset -20px -20px 35px rgba(100,150,255,0.18),
-        0 20px 35px rgba(0,0,0,0.15);
-}
-
-
-/* 유리 반사 */
-
-.ball::before {
-    content: "";
-
-    position: absolute;
-
-    width: 55px;
-    height: 28px;
-
-    top: 25px;
-    left: 30px;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.8);
-
-    filter: blur(8px);
-
-    transform: rotate(-20deg);
-}
-
-
-/* 내부 빛 */
-
-.ball::after {
-    content: "";
-
-    position: absolute;
-
-    width: 90px;
-    height: 90px;
-
-    bottom: 18px;
-    right: 18px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            rgba(255,255,255,0.18),
-            transparent 70%
-        );
-}
-
-
-/* =====================
-   눈 결정
-===================== */
-
-.snow {
-    width: 90px;
-    height: 90px;
-
-    z-index: 10;
-
-    animation:
-        rotate 40s linear infinite;
-
-    filter:
-        drop-shadow(0 0 5px white)
-        drop-shadow(0 0 12px #7fd8ff);
-}
-
-
-@keyframes rotate {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-
-.snow line,
-.snow polygon,
-.snow circle {
-
-    stroke: #9de8ff;
-
-    stroke-width: 5;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    fill: none;
-}
-
-
-.snow circle {
-    fill: #9de8ff;
-}
-
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Snow Archive</title>
+
+    <!-- 디자인 연결 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
 
-<div class="background">
+    <!-- 배경 -->
+    <div class="background">
 
 
-    <div class="ball">
+        <!-- 수정구 -->
+        <div class="ball" id="ball">
 
 
-        <svg class="snow" viewBox="-100 -100 200 200">
+            <!-- 움직이는 눈 결정 -->
+            <svg
+                class="snow"
+                id="snow"
+                viewBox="-100 -100 200 200">
 
 
-            <!-- 중앙 결정 -->
-            <polygon points="
-                0,-16
-                14,-8
-                14,8
-                0,16
-                -14,8
-                -14,-8" />
+                <!-- 중앙 육각 결정 -->
+                <polygon points="
+                    0,-16
+                    14,-8
+                    14,8
+                    0,16
+                    -14,8
+                    -14,-8" />
 
 
-            <!-- 큰 축 -->
-            <line x1="0" y1="-80" x2="0" y2="-25"/>
-            <line x1="0" y1="25" x2="0" y2="80"/>
+                <!-- 6개의 큰 축 -->
+                <line x1="0" y1="-80" x2="0" y2="-25"/>
+                <line x1="0" y1="25" x2="0" y2="80"/>
 
-            <line x1="-69" y1="-40" x2="-22" y2="-13"/>
-            <line x1="22" y1="13" x2="69" y2="40"/>
+                <line x1="-69" y1="-40" x2="-22" y2="-13"/>
+                <line x1="22" y1="13" x2="69" y2="40"/>
 
-            <line x1="-69" y1="40" x2="-22" y2="13"/>
-            <line x1="22" y1="-13" x2="69" y2="-40"/>
-
-
-            <!-- 가지 -->
-            <line x1="0" y1="-55" x2="-10" y2="-45"/>
-            <line x1="0" y1="-55" x2="10" y2="-45"/>
-
-            <line x1="0" y1="55" x2="-10" y2="45"/>
-            <line x1="0" y1="55" x2="10" y2="45"/>
-
-            <line x1="-48" y1="-28" x2="-35" y2="-30"/>
-            <line x1="-48" y1="-28" x2="-42" y2="-15"/>
-
-            <line x1="48" y1="28" x2="35" y2="30"/>
-            <line x1="48" y1="28" x2="42" y2="15"/>
-
-            <line x1="-48" y1="28" x2="-35" y2="30"/>
-            <line x1="-48" y1="28" x2="-42" y2="15"/>
-
-            <line x1="48" y1="-28" x2="35" y2="-30"/>
-            <line x1="48" y1="-28" x2="42" y2="-15"/>
+                <line x1="-69" y1="40" x2="-22" y2="13"/>
+                <line x1="22" y1="-13" x2="69" y2="-40"/>
 
 
-            <!-- 끝 장식 -->
-            <circle cx="0" cy="-80" r="3"/>
-            <circle cx="0" cy="80" r="3"/>
+                <!-- 가지 -->
+                <line x1="0" y1="-55" x2="-10" y2="-45"/>
+                <line x1="0" y1="-55" x2="10" y2="-45"/>
 
-            <circle cx="-69" cy="-40" r="3"/>
-            <circle cx="69" cy="40" r="3"/>
-
-            <circle cx="-69" cy="40" r="3"/>
-            <circle cx="69" cy="-40" r="3"/>
+                <line x1="0" y1="55" x2="-10" y2="45"/>
+                <line x1="0" y1="55" x2="10" y2="45"/>
 
 
-        </svg>
+                <line x1="-48" y1="-28" x2="-35" y2="-30"/>
+                <line x1="-48" y1="-28" x2="-42" y2="-15"/>
+
+                <line x1="48" y1="28" x2="35" y2="30"/>
+                <line x1="48" y1="28" x2="42" y2="15"/>
+
+
+                <line x1="-48" y1="28" x2="-35" y2="30"/>
+                <line x1="-48" y1="28" x2="-42" y2="15"/>
+
+                <line x1="48" y1="-28" x2="35" y2="-30"/>
+                <line x1="48" y1="-28" x2="42" y2="-15"/>
+
+
+                <!-- 끝 장식 -->
+                <circle cx="0" cy="-80" r="3"/>
+                <circle cx="0" cy="80" r="3"/>
+
+                <circle cx="-69" cy="-40" r="3"/>
+                <circle cx="69" cy="40" r="3"/>
+
+                <circle cx="-69" cy="40" r="3"/>
+                <circle cx="69" cy="-40" r="3"/>
+
+
+            </svg>
+
+
+        </div>
 
 
     </div>
 
 
-</div>
+    <!-- 움직임 연결 -->
+    <script src="script.js"></script>
 
 
 </body>
