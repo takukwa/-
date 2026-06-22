@@ -43,6 +43,7 @@ body {
     overflow: hidden;
 
 
+    /* 유리 색감 */
     background:
         radial-gradient(
             circle at 30% 25%,
@@ -53,18 +54,19 @@ body {
         );
 
 
-    border: 2px solid rgba(255,255,255,0.9);
+    /* 흰 테두리 제거 */
+    border: none;
 
 
+    /* 바깥 그림자 제거, 내부 유리감만 유지 */
     box-shadow:
         inset 18px 18px 30px rgba(255,255,255,0.7),
-        inset -18px -18px 30px rgba(100,150,255,0.18),
-        0 20px 40px rgba(0,0,0,0.15);
+        inset -18px -18px 30px rgba(100,150,255,0.18);
 }
 
 
 /* =====================
-   유리 하이라이트
+   유리 빛 반사
 ===================== */
 
 .ball::before {
@@ -121,8 +123,7 @@ body {
     height: 70px;
 
 
-    /* 핵심!!
-       눈의 정중앙이 mover와 겹치도록 */
+    /* 눈 중심과 mover 중심 일치 */
     left: -35px;
     top: -35px;
 
@@ -133,7 +134,9 @@ body {
 }
 
 
-/* 눈 결정 선 */
+/* =====================
+   눈 결정 디자인
+===================== */
 
 .snow line,
 .snow polygon,
@@ -149,8 +152,6 @@ body {
     fill: none;
 }
 
-
-/* 눈 결정 끝 점 */
 
 .snow circle {
 
