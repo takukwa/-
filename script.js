@@ -7,21 +7,21 @@ const snow = document.getElementById("snow");
 
 
 // =====================
-// 움직임 설정
+// 위치와 속도
 // =====================
 
-// 위치 (중앙 기준)
+// 수정구 중심 기준 위치
 let x = 0;
 let y = 0;
 
 
-// 속도
-let vx = 0.35;
-let vy = 0.25;
+// 움직임 속도
+let vx = 0.7;
+let vy = 0.45;
 
 
-// 눈결정 회전 각도
-let rotation = 0;
+// 눈결정 회전
+let angle = 0;
 
 
 // =====================
@@ -31,24 +31,21 @@ let rotation = 0;
 function animate() {
 
 
-    // 수정구 크기
-    const ballSize = ball.offsetWidth;
+    // 현재 수정구와 눈 크기
+    const ballRadius = ball.offsetWidth / 2;
+    const snowRadius = snow.offsetWidth / 2;
 
 
-    // 눈결정 크기
-    const snowSize = snow.offsetWidth;
+    // 눈결정이 움직일 수 있는 최대 거리
+    const limit = ballRadius - snowRadius - 3;
 
 
-    // 움직일 수 있는 반경
-    const limit = (ballSize - snowSize) / 2;
-
-
-    // 위치 업데이트
+    // 위치 이동
     x += vx;
     y += vy;
 
 
-    // 중심에서 거리
+    // 중심에서의 거리
     const distance = Math.sqrt(x * x + y * y);
 
 
@@ -59,37 +56,43 @@ function animate() {
     if (distance >= limit) {
 
 
-        // 법선 벡터
+        // 충돌한 벽의 방향(법선 벡터)
         const nx = x / distance;
         const ny = y / distance;
 
 
-        // 속도와 법선의 내적
+        // 속도가 벽 방향으로 얼마나 가는지 계산
         const dot = vx * nx + vy * ny;
 
 
         // 반사 공식
-        vx = vx - 2 * dot * nx;
-        vy = vy - 2 * dot * ny;
+        vx = vx - (2 * dot * nx);
+        vy = vy - (2 * dot * ny);
 
 
-        // 벽 안으로 살짝 이동
+        // 눈이 벽 밖으로 나가지 않게 보정
         x = nx * (limit - 1);
         y = ny * (limit - 1);
+
     }
 
 
-    // 눈결정 회전
-    rotation += 0.6;
+    // 눈 결정 자체 회전
+    angle += 0.6;
 
 
-    // 위치 + 회전 적용
+    // 위치 적용
     snow.style.transform =
-        `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+        `
+        translate(-50%, -50%)
+        translate(${x}px, ${y}px)
+        rotate(${angle}deg)
+        `;
 
 
     // 다음 프레임
     requestAnimationFrame(animate);
+
 }
 
 
