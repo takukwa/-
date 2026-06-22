@@ -16,7 +16,7 @@ let y = 0;
 
 
 // 시작 방향 (조금 랜덤)
-let speed = 0.9;
+let speed = 1;
 let direction = Math.random() * Math.PI * 2;
 
 let vx = Math.cos(direction) * speed;
