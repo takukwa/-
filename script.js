@@ -78,6 +78,19 @@ function animate() {
 
         vx = vx - 2 * dot * nx;
         vy = vy - 2 * dot * ny;
+
+
+        // ✨ 약간의 랜덤한 흔들림 추가
+        vx += (Math.random() - 0.5) * 0.4;
+        vy += (Math.random() - 0.5) * 0.4;
+
+
+        // 속도가 너무 빨라지거나 느려지지 않게 보정
+        const speed = Math.hypot(vx, vy);
+        const targetSpeed = 1;
+        
+        vx = (vx / speed) * targetSpeed;
+        vy = (vy / speed) * targetSpeed;
     }
 
 
