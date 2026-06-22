@@ -1,1 +1,171 @@
+/* =====================
+   기본 설정
+===================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================
+   창
+===================== */
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #e6e6e6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =====================
+   배경
+===================== */
+
+.background {
+    width: 70vw;
+    max-width: 1100px;
+
+    aspect-ratio: 1.414 / 1;
+
+    max-height: 70vh;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 35px 70px rgba(0, 0, 0, 0.20);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =====================
+   수정구
+===================== */
+
+.ball {
+
+    /* 배경 크기에 따라 변경 */
+    width: clamp(85px, 10vw, 120px);
+    aspect-ratio: 1 / 1;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,0.40),
+            rgba(220,240,255,0.22) 35%,
+            rgba(180,220,255,0.12) 70%,
+            rgba(120,170,255,0.06)
+        );
+
+
+    border:
+        2px solid rgba(255,255,255,0.9);
+
+
+    box-shadow:
+        inset 12px 12px 22px rgba(255,255,255,0.6),
+        inset -12px -12px 22px rgba(100,150,255,0.15),
+        0 15px 25px rgba(0,0,0,0.15);
+}
+
+
+/* =====================
+   유리 반사
+===================== */
+
+.ball::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 35%;
+    height: 18%;
+
+    top: 15%;
+    left: 20%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    filter: blur(8px);
+
+    transform:
+        rotate(-20deg);
+
+    z-index: 5;
+}
+
+
+/* =====================
+   눈 결정
+===================== */
+
+.snow {
+
+    position: absolute;
+
+    width: 42%;
+    aspect-ratio: 1 / 1;
+
+    /* JS가 움직일 수 있게 */
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 3;
+
+
+    filter:
+        drop-shadow(0 0 4px white)
+        drop-shadow(0 0 8px #7fd8ff);
+}
+
+
+/* 눈 결정 디자인 */
+
+.snow line,
+.snow polygon,
+.snow circle {
+
+    stroke: #9de8ff;
+
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    fill: none;
+}
+
+
+.snow circle {
+
+    fill: #9de8ff;
+
+}
