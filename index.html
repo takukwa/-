@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Snow Archive</title>
 
-    <!-- 디자인 연결 -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,22 +13,22 @@
 <body>
 
 
-    <!-- 배경 -->
-    <div class="background">
+    <!-- 수정구 -->
+    <div class="ball" id="ball">
 
 
-        <!-- 수정구 -->
-        <div class="ball" id="ball">
+        <!-- 움직이는 중심점 -->
+        <div id="mover">
 
 
-            <!-- 움직이는 눈 결정 -->
-            <svg
+            <!-- 눈 결정 -->
+            <svg 
                 class="snow"
                 id="snow"
                 viewBox="-100 -100 200 200">
 
 
-                <!-- 중앙 육각 결정 -->
+                <!-- 중심 결정 -->
                 <polygon points="
                     0,-16
                     14,-8
@@ -40,7 +38,7 @@
                     -14,-8" />
 
 
-                <!-- 6개의 큰 축 -->
+                <!-- 큰 가지 -->
                 <line x1="0" y1="-80" x2="0" y2="-25"/>
                 <line x1="0" y1="25" x2="0" y2="80"/>
 
@@ -51,7 +49,7 @@
                 <line x1="22" y1="-13" x2="69" y2="-40"/>
 
 
-                <!-- 가지 -->
+                <!-- 작은 가지 -->
                 <line x1="0" y1="-55" x2="-10" y2="-45"/>
                 <line x1="0" y1="-55" x2="10" y2="-45"/>
 
@@ -93,7 +91,6 @@
     </div>
 
 
-    <!-- 움직임 연결 -->
     <script src="script.js"></script>
 
 
