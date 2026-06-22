@@ -55,7 +55,8 @@ body {
 /* 눈꽃 */
 .snowflake {
     font-size: 90px;
-    color: white;
+    color: #bcdcff;
+};
 
     text-shadow:
         0 0 10px rgba(255,255,255,0.8);
