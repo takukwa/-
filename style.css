@@ -64,11 +64,10 @@ body {
 
 .left-page {
 
-    width: clamp(220px, 18vw, 320px);
+    width: clamp(380px, 28vw, 520px);
 
-    height: clamp(320px, 50vh, 500px);
+    height: clamp(550px, 75vh, 800px);
 }
-
 
 /* =====================
    오른쪽 페이지 묶음 (B)
@@ -76,9 +75,9 @@ body {
 
 .right-column {
 
-    width: clamp(220px, 18vw, 320px);
+    width: clamp(380px, 28vw, 520px);
 
-    height: clamp(320px, 50vh, 500px);
+    height: clamp(550px, 75vh, 800px);
 
     display: flex;
 
