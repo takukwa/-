@@ -226,3 +226,36 @@ body {
 
     fill: #9de8ff;
 }
+
+/* =====================
+   중앙 영역
+===================== */
+
+.center-area {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =====================
+   D-Day
+===================== */
+
+.dday {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8ccfe8;
+
+    text-shadow:
+        0 0 10px rgba(140,207,232,0.3);
+}
