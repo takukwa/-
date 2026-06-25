@@ -75,8 +75,6 @@ body {
 ===================== */
 
 .right-column {
-    background: red;
-
     width: clamp(280px, 22vw, 400px);
 
     height: clamp(420px, 65vh, 650px);
