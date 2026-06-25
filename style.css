@@ -38,7 +38,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    gap: 40px;
+    gap: 70px;
 }
 
 
@@ -75,11 +75,13 @@ body {
 ===================== */
 
 .right-column {
+
     width: clamp(280px, 22vw, 400px);
 
     height: clamp(420px, 65vh, 650px);
 
     display: flex;
+
     flex-direction: column;
 
     gap: 20px;
@@ -103,12 +105,49 @@ body {
 
 
 /* =====================
+   중앙 영역
+===================== */
+
+.center-area {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =====================
+   D-Day
+===================== */
+
+.dday {
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #222;
+
+    text-shadow: none;
+
+    user-select: none;
+}
+
+
+/* =====================
    수정구
 ===================== */
 
 .ball {
 
     width: clamp(140px, 20vw, 220px);
+
     aspect-ratio: 1 / 1;
 
     position: relative;
@@ -116,7 +155,6 @@ body {
     border-radius: 50%;
 
     overflow: hidden;
-
 
     background:
         radial-gradient(
@@ -127,9 +165,7 @@ body {
             rgba(120,170,255,0.08) 100%
         );
 
-
     border: none;
-
 
     box-shadow:
         inset 18px 18px 30px rgba(255,255,255,0.7),
@@ -221,41 +257,7 @@ body {
     fill: none;
 }
 
-
 .snow circle {
 
     fill: #9de8ff;
-}
-
-/* =====================
-   중앙 영역
-===================== */
-
-.center-area {
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 20px;
-}
-
-
-/* =====================
-   D-Day
-===================== */
-
-.dday {
-
-    font-size: 28px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    color: #8ccfe8;
-
-    text-shadow:
-        0 0 10px rgba(140,207,232,0.3);
 }
