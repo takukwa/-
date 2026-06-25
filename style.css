@@ -63,8 +63,8 @@ body {
 ===================== */
 
 .left-page {
-    width: clamp(500px, 35vw, 700px);
-    height: clamp(700px, 85vh, 950px);
+    width: clamp(333px, 23vw, 467px);
+    height: clamp(467px, 57vh, 633px);
 }
 
 /* =====================
@@ -72,8 +72,8 @@ body {
 ===================== */
 
 .right-column {
-    width: clamp(500px, 35vw, 700px);
-    height: clamp(700px, 85vh, 950px);
+    width: clamp(333px, 23vw, 467px);
+    height: clamp(467px, 57vh, 633px);
 
     display: flex;
     flex-direction: column;
