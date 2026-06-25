@@ -1,3 +1,5 @@
+const dday = document.getElementById("dday");
+
 // =====================
 // 요소 가져오기
 // =====================
@@ -124,6 +126,24 @@ function animate() {
 
 }
 
+// =====================
+// D+ 계산
+// =====================
+
+const startDate = new Date("2023-02-17");
+
+const today = new Date();
+
+const diffTime =
+    today - startDate;
+
+const diffDay =
+    Math.floor(
+        diffTime / (1000 * 60 * 60 * 24)
+    ) + 1;
+
+dday.textContent =
+    `D+${diffDay}`;
 
 // 시작
 animate();
