@@ -28,6 +28,83 @@ body {
 
 
 /* =====================
+   전체 레이아웃
+===================== */
+
+.layout {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* =====================
+   페이지 공통
+===================== */
+
+.page {
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08),
+        0 2px 6px rgba(0,0,0,0.04);
+}
+
+
+/* =====================
+   왼쪽 페이지 (A)
+===================== */
+
+.left-page {
+
+    width: clamp(220px, 18vw, 320px);
+
+    height: clamp(320px, 50vh, 500px);
+}
+
+
+/* =====================
+   오른쪽 페이지 묶음 (B)
+===================== */
+
+.right-column {
+
+    width: clamp(220px, 18vw, 320px);
+
+    height: clamp(320px, 50vh, 500px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* B1 */
+
+.top-page {
+
+    flex: 1;
+}
+
+
+/* B2 */
+
+.bottom-page {
+
+    flex: 2;
+}
+
+
+/* =====================
    수정구
 ===================== */
 
@@ -43,7 +120,6 @@ body {
     overflow: hidden;
 
 
-    /* 유리 색감 */
     background:
         radial-gradient(
             circle at 30% 25%,
@@ -54,11 +130,9 @@ body {
         );
 
 
-    /* 흰 테두리 제거 */
     border: none;
 
 
-    /* 바깥 그림자 제거, 내부 유리감만 유지 */
     box-shadow:
         inset 18px 18px 30px rgba(255,255,255,0.7),
         inset -18px -18px 30px rgba(100,150,255,0.18);
@@ -122,11 +196,8 @@ body {
     width: 70px;
     height: 70px;
 
-
-    /* 눈 중심과 mover 중심 일치 */
     left: -35px;
     top: -35px;
-
 
     filter:
         drop-shadow(0 0 5px white)
