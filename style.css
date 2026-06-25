@@ -63,8 +63,8 @@ body {
 ===================== */
 
 .left-page {
-    width: 800px;
-    height: 1000px;
+    width: 650px;
+    height: 700px;
 }
 
 /* =====================
@@ -72,13 +72,13 @@ body {
 ===================== */
 
 .right-column {
-   width: 800px;
-   height: 1000px;
-   
-   display: flex;
-   flex-direction: column;
-   
-   gap: 24px;
+    width: 650px;
+    height: 700px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
 }
 
 
@@ -111,7 +111,7 @@ body {
 
     border-radius: 50%;
 
-    overflow: hidden;
+    overflow: auto;
 
 
     background:
