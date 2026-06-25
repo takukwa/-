@@ -64,9 +64,9 @@ body {
 
 .left-page {
 
-    width: clamp(380px, 28vw, 520px);
+    width: clamp(500px, 35vw, 700px);
 
-    height: clamp(550px, 75vh, 800px);
+    height: clamp(700px, 85vh, 950px);
 }
 
 /* =====================
@@ -75,15 +75,15 @@ body {
 
 .right-column {
 
-    width: clamp(380px, 28vw, 520px);
+    width: clamp(500px, 35vw, 700px);
 
-    height: clamp(550px, 75vh, 800px);
+    height: clamp(700px, 85vh, 950px);
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 20px;
+    gap: 24px;
 }
 
 
