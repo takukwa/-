@@ -38,7 +38,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    gap: 80px;
+    gap: 40px;
 }
 
 
@@ -64,9 +64,9 @@ body {
 
 .left-page {
 
-    width: clamp(220px, 18vw, 320px);
+    width: clamp(280px, 22vw, 400px);
 
-    height: clamp(320px, 50vh, 500px);
+    height: clamp(420px, 65vh, 650px);
 }
 
 
@@ -76,12 +76,11 @@ body {
 
 .right-column {
 
-    width: clamp(220px, 18vw, 320px);
+    width: clamp(280px, 22vw, 400px);
 
-    height: clamp(320px, 50vh, 500px);
+    height: clamp(420px, 65vh, 650px);
 
     display: flex;
-
     flex-direction: column;
 
     gap: 20px;
